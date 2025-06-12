@@ -389,17 +389,41 @@ footer {
 
 .screenshots {
     display: flex;
-    gap: 20px;
+    gap: 32px;
     flex-wrap: wrap;
-    margin-top: 12px;
+    justify-content: center;
+}
+
+.screenshots figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 750px;
+    margin: 0;
+    background: var(--primary-color);
+    border-radius: 10px;
+    padding: 16px 12px 12px 12px;
 }
 
 .screenshots img {
-    max-width: 220px;
+    max-width: 100%;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    border: 1px solid #e0e0e0;
-    background: var(--secondary-color);
+    margin-bottom: 8px;
+}
+
+.screenshots figcaption {
+    font-size: 0.98rem;
+    color: #4f8cff;
+    margin-bottom: 6px;
+    text-align: center;
+    font-style: italic;
+}
+
+.screen-desc {
+    font-size: 0.95rem;
+    color: var(--text-color)
+    text-align: center;
+    margin: 0;
 }
 
 /* Media Queries */

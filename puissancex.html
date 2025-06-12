@@ -47,13 +47,43 @@
                 </div>
                 <div class="project-block">
                     <h2>Déroulement</h2>
-                    <p><!-- Décris les étapes, les difficultés rencontrées, etc. --></p>
+                    <p>
+                        <li> Analyse du besoin : compréhension des règles du jeu Puissance X et des attentes en matière d'IA et d'interface. </li>
+                        <li>Modélisation : définition des classes (plateau, joueur, IA, etc.) et structure de données.</li>
+                        <li>Développement de l’IA : implémentation de plusieurs stratégies (ex : aléatoire, défensive, offensive).</li>
+                        <li>Tests et débogage : vérification des comportements IA, détection des cas limites.</li>
+                        <li>Implémentation de l’interface graphique avec JavaFX, en assurant une interaction fluide.</li>
+                    </p>
                 </div>
                 <div class="project-block">
                     <h2>Traces & captures d'écran</h2>
                     <div class="screenshots">
-                        <!-- <img src="chemin/vers/image1.png" alt="Capture 1"> -->
-                        <!-- <img src="chemin/vers/image2.png" alt="Capture 2"> -->
+                        <figure>
+                            <img src="../Portfolio/images/figure1-pX.png" alt="Figure 1 - Plateau de jeu">
+                            <figcaption><strong>Figure 1</strong> – Interface en ligne de commande illustrant le déroulement du jeu avec plusieurs joueurs.</figcaption>
+                            <div class="screen-desc">
+                                <p>La figure ci-dessus montre l’état du programme lors de son exécution dans un terminal. Plusieurs informations clés peuvent y être relevées :</p>
+                                <ul>
+                                    <p><strong>Initialisation des joueurs :</strong> On distingue que plusieurs joueurs ont été ajoutés avec succès, identifiés par un numéro ou un nom, qu’ils soient humains ou IA.</p>
+                                    <p><strong>Phase de jeu :</strong> Le terminal affiche la progression des tours, les actions entreprises par les joueurs (ex : pose de pion, prise de décision), ainsi que les interactions automatiques des IA.</p>
+                                    <p><strong>Clarté de l’interface :</strong> Le rendu en ligne de commande reste lisible et bien structuré, ce qui facilite le suivi du jeu par l’utilisateur. Les messages sont formatés de manière à distinguer clairement les joueurs IA des joueurs humains.</p>
+                                </ul>
+                                <p>Cette sortie terminale constitue un indicateur précieux pour vérifier le bon déroulement du programme, notamment la fluidité de l’intégration des IA dans la boucle de jeu.</p>
+                            </div>
+                        </figure>
+                        <figure>
+                            <img src="../Portfolio/images/Figures2-pX.png" alt="Figure 2 - Code">
+                            <figcaption><strong>Figure 2</strong> – Extrait de code en charge de la création des joueurs, incluant la logique d’ajout des IA.</figcaption>
+                            <div class="screen-desc">
+                                <p>L’extrait de code présenté dans la figure 2 est centré sur la fonction responsable de la gestion des joueurs. Plusieurs aspects techniques peuvent être soulignés :</p>
+                                <ul>
+                                    <p><strong>Ajout dynamique des joueurs :</strong> Le code permet d’ajouter des joueurs de façon dynamique, en distinguant les entrées utilisateur (joueurs humains) et les entités IA, ce qui améliore la flexibilité du système.</p    >
+                                    <p><strong>Appel conditionnel des IA :</strong> Une structure conditionnelle (probablement basée sur un identifiant ou une entrée de type) permet d’instancier différents types d’intelligences artificielles. Cela laisse présager une architecture modulaire où chaque IA implémente sa propre logique de décision.</p>
+                                    <p><strong>Lisibilité et modularité :</strong> La séparation des responsabilités dans le code est bien marquée : l’instanciation, l’enregistrement et l’appel des IA sont clairement isolés, favorisant la maintenabilité du programme.</p>
+                                </ul>
+                                <p>Ce design permet également de tester indépendamment chaque module IA et d’envisager facilement l’ajout de nouveaux types de comportements sans modifier en profondeur le système de gestion des joueurs.</p>
+                            </div>
+                        </figure>
                     </div>
                 </div>
                 <div class="project-block">
