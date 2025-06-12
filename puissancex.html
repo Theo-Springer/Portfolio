@@ -32,9 +32,9 @@
                 <div class="project-block">
                     <h2>Objectifs</h2>
                     <ul>
-                        <li>Concevoir un jeu de plateau de type Puissance X en respectant les règles de base du gameplay.</li>
-                        <li>Développer plusieurs intelligences artificielles capables d’adapter leurs stratégies en fonction du comportement ou du niveau du joueur adverse.</li>
-                        <li>Réaliser une interface graphique réactive, ergonomique et intuitive, permettant une prise en main facile par les utilisateurs.</li>
+                        <p>Concevoir un jeu de plateau de type Puissance X en respectant les règles de base du gameplay.</p>
+                        <p>Développer plusieurs intelligences artificielles capables d’adapter leurs stratégies en fonction du comportement ou du niveau du joueur adverse.</p>
+                        <p>Réaliser une interface graphique réactive, ergonomique et intuitive, permettant une prise en main facile par les utilisateurs.</p>
                     </ul>
                 </div>
                 <div class="project-block">
@@ -64,11 +64,15 @@
                             <div class="screen-desc">
                                 <p>La figure ci-dessus montre l’état du programme lors de son exécution dans un terminal. Plusieurs informations clés peuvent y être relevées :</p>
                                 <ul>
-                                    <p><strong>Initialisation des joueurs :</strong> On distingue que plusieurs joueurs ont été ajoutés avec succès, identifiés par un numéro ou un nom, qu’ils soient humains ou IA.</p>
-                                    <p><strong>Phase de jeu :</strong> Le terminal affiche la progression des tours, les actions entreprises par les joueurs (ex : pose de pion, prise de décision), ainsi que les interactions automatiques des IA.</p>
-                                    <p><strong>Clarté de l’interface :</strong> Le rendu en ligne de commande reste lisible et bien structuré, ce qui facilite le suivi du jeu par l’utilisateur. Les messages sont formatés de manière à distinguer clairement les joueurs IA des joueurs humains.</p>
+                                    <p><strong>Trace :</strong> La Figure 1 est une capture du terminal lors de l’exécution du jeu Puissance X, illustrant une partie en cours intégrant à la fois des joueurs humains et des intelligences artificielles. L’interface textuelle présente la grille de jeu, les symboles représentant les pions des différents joueurs, ainsi que les messages indiquant les actions effectuées par chacun.</p>
+                                    <br>
+                                    <p>Le code gère la création des joueurs, humains ou IA, à l’aide de classes spécifiques instanciées dynamiquement au démarrage de la partie. Une logique conditionnelle permet de déterminer le type de joueur et d’appliquer le comportement correspondant : soit la saisie via le clavier pour un joueur humain, soit une méthode automatique pour une IA.</p>
+                                    <br>
+                                    <p><strong>L’affichage :</strong> Utilisation de la bibliothèque Boardifier-console, dont les classes ont été étendues pour adapter le rendu à ce jeu spécifique. Ce mécanisme repose sur l’héritage et le polymorphisme, permettant de redéfinir le comportement par défaut tout en restant compatible avec le cœur de la bibliothèque.</p>
+                                    <br>
+                                    <p><strong>Cette figure met en évidence plusieurs savoirs :</strong> La création dynamique d’objets selon leur type, la mise en œuvre de comportements distincts via le polymorphisme, et l’affichage structuré dans un terminal. Elle reflète également des savoir-faire essentiels en conception orientée objet et en architecture logicielle, comme la séparation des rôles (affichage, logique de jeu, IA), et l’adaptabilité du code à différents types de joueurs.</p>
                                 </ul>
-                                <p>Cette sortie terminale constitue un indicateur précieux pour vérifier le bon déroulement du programme, notamment la fluidité de l’intégration des IA dans la boucle de jeu.</p>
+                                <p>En somme, cette capture d’écran illustre non seulement le fonctionnement du jeu, mais aussi les principes de conception orientée objet appliqués pour gérer la complexité croissante des interactions entre joueurs humains et IA.</p>
                             </div>
                         </figure>
                         <figure>
@@ -77,8 +81,12 @@
                             <div class="screen-desc">
                                 <p>L’extrait de code présenté dans la figure 2 est centré sur la fonction responsable de la gestion des joueurs. Plusieurs aspects techniques peuvent être soulignés :</p>
                                 <ul>
-                                    <p><strong>Ajout dynamique des joueurs :</strong> Le code permet d’ajouter des joueurs de façon dynamique, en distinguant les entrées utilisateur (joueurs humains) et les entités IA, ce qui améliore la flexibilité du système.</p    >
-                                    <p><strong>Appel conditionnel des IA :</strong> Une structure conditionnelle (probablement basée sur un identifiant ou une entrée de type) permet d’instancier différents types d’intelligences artificielles. Cela laisse présager une architecture modulaire où chaque IA implémente sa propre logique de décision.</p>
+                                    <p><strong>Trace :</strong> La Figure 2 est une capture de l’environnement de développement IntelliJ IDEA, utilisée pour développer le jeu Puissance X en Java, dans le cadre d’un projet encadré. Ce développement repose sur la bibliothèque Boardifier, spécifiquement conçue pour faciliter la création de jeux de plateau selon le paradigme MVC (Modèle-Vue-Contrôleur), un principe central en ingénierie logicielle pour assurer une séparation claire des responsabilités.</p>
+                                    <br>
+                                    <p>Ce paradigme structure l’application en trois couches distinctes : le modèle contient les données et règles de gestion du jeu, la vue est responsable de l’affichage à l’utilisateur, et le contrôleur orchestre les interactions entre les deux. Cette organisation est rendue visible sur la partie gauche de la Figure 2, où les répertoires model, view et control sont surlignés, soulignant une architecture modulaire et maintenable.</p>
+                                    <br>
+                                    <p>Sur la droite, trois blocs de code sont mis en évidence : ils correspondent à la création des composants clés du MVC. Le modèle est d’abord instancié pour représenter l’état du jeu ; il est ensuite utilisé par la vue (par exemple, via PuissanceXStageModel) pour générer l’affichage approprié. Enfin, le contrôleur (PuissanceXController) est construit en liant modèle et vue, assurant la prise en compte des actions du joueur, la logique du jeu et le rafraîchissement dynamique de l’interface.</p>
+                                    <br>
                                     <p><strong>Lisibilité et modularité :</strong> La séparation des responsabilités dans le code est bien marquée : l’instanciation, l’enregistrement et l’appel des IA sont clairement isolés, favorisant la maintenabilité du programme.</p>
                                 </ul>
                                 <p>Ce design permet également de tester indépendamment chaque module IA et d’envisager facilement l’ajout de nouveaux types de comportements sans modifier en profondeur le système de gestion des joueurs.</p>

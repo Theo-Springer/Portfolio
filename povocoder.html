@@ -23,24 +23,69 @@
 
     <main>
         <section class="project-detail">
-            <h1>Povocoder</h1>
-            <h2>Objectifs</h2>
-            <p><!-- Explique ici les objectifs du projet --></p>
-            <h2>Technologies utilisées</h2>
-            <ul>
-                <li><!-- Exemple : Java --></li>
-                <li><!-- Exemple : Flask --></li>
-                <li><!-- ... --></li>
-            </ul>
-            <h2>Déroulement</h2>
-            <p><!-- Décris les étapes, les difficultés rencontrées, etc. --></p>
-            <h2>Traces & captures d'écran</h2>
-            <div class="screenshots">
-                <!-- Ajoute ici tes images ou captures d'écran -->
-                <!-- <img src="chemin/vers/image.png" alt="Description"> -->
+            <div class="project-header">
+                <i class="fas fa-wave-square project-icon"></i>
+                <h1>Povocoder</h1>
+                <p class="project-desc">Application de traitement audio permettant de transformer la voix en temps réel grâce à un vocoder numérique.</p>
             </div>
-            <h2>Bilan personnel</h2>
-            <p><!-- Ton retour d'expérience sur ce projet --></p>
+            <div class="project-content">
+                <div class="project-block">
+                    <h2>Objectifs</h2>
+                    <ul>
+                        <p>Comprendre le fonctionnement d’un vocoder et ses applications dans le traitement du signal audio.</p>
+                        <p>Développer une application capable de modifier la voix en temps réel à l’aide de filtres et d’effets numériques.</p>
+                        <p>Permettre à l’utilisateur de choisir différents paramètres et presets pour personnaliser le rendu sonore.</p>
+                    </ul>
+                </div>
+                <div class="project-block">
+                    <h2>Technologies utilisées</h2>
+                    <ul class="tech-list">
+                        <li><i class="fab fa-java"></i> Java</li>
+                        <li><i class="fas fa-paint-brush"></i> Utilisation StdDraw</li>
+                    </ul>
+                </div>
+                <div class="project-block">
+                    <h2>Déroulement</h2>
+                    <p>
+                        <li>Analyse du besoin : étude du principe du vocoder, des entrées/sorties audio et des effets souhaités.</li>
+                        <li>Conception de l’architecture logicielle : séparation du traitement audio, de l’interface et de la gestion des presets.</li>
+                        <li>Développement du module de traitement audio en temps réel (filtrage, modulation, mixage).</li>
+                        <li>Création de l’interface graphique pour permettre à l’utilisateur de régler les paramètres du vocoder.</li>
+                        <li>Tests, corrections et optimisation pour garantir une faible latence et une bonne qualité sonore.</li>
+                    </p>
+                </div>
+                <div class="project-block">
+                    <h2>Traces & captures d'écran</h2>
+                    <div class="screenshots">
+                        <figure>
+                            <img src="../Portfolio/images/figure1-pov.png" alt="Figure 1 - Interface principale du Povocoder">
+                            <figcaption><strong>Figure 1</strong> – Interface graphique principale du Povocoder.</figcaption>
+                            <div class="screen-desc">
+                                <p>L’interface permet à l’utilisateur de sélectionner la source audio, d’ajuster les paramètres du vocoder (nombre de bandes, niveau de modulation, etc.) et de visualiser le signal en temps réel.</p>
+                                <ul>
+                                    <p><strong>Traces :</strong> La Figure 1 illustre un extrait de code Java implémentant la méthode resample, dont la fonction est de réaliser un ré-échantillonnage sur un tableau de données numériques, typiquement utilisé dans le cadre du traitement de signaux audio. Cette opération vise à modifier la fréquence d’échantillonnage d’un signal, que ce soit pour en réduire la résolution (compression) ou l’augmenter (interpolation), selon les exigences de l’application.</p>
+                                    <br>
+                                    <p>Développée dans le cadre d’un projet Java orienté traitement du signal, cette méthode repose sur un paramètre freqScale qui détermine le facteur d’échantillonnage. Trois cas distincts sont gérés :</p>
+                                    <p>
+                                        <p><strong>Si freqScale == 1</strong>, aucune modification n’est appliquée : une simple copie du tableau initial est renvoyée.</p>
+                                        <p><strong>Si freqScale > 1</strong>, l’algorithme effectue un sous-échantillonnage en ne conservant qu’un échantillon tous les freqScale points, réduisant ainsi la taille du signal.</p>
+                                        <p><strong>Si freqScale < 1</strong>, un sur-échantillonnage est mis en œuvre à travers une interpolation linéaire, qui insère des points intermédiaires calculés entre les échantillons d’origine, afin de lisser le signal et en augmenter la densité.</p>
+                                    </p>
+                                    <br>
+                                    <p>Cette figure met en lumière plusieurs savoirs fondamentaux, tels que la gestion robuste des erreurs via des exceptions (IllegalArgumentException), la compréhension fine des techniques d’interpolation numérique, ainsi que l’aptitude à structurer un algorithme clair et performant avec des cas bien différenciés.</p>
+                                    <br>
+                                    <p>Elle souligne également <strong>des savoir-faire pratiques essentiels</strong>, comme la maîtrise des opérations sur les indices de tableau, la manipulation simultanée de types entiers et flottants, et l’usage judicieux des structures conditionnelles pour traiter des cas variés. Ce type d’implémentation représente un excellent point de départ pour une analyse comparative d’algorithmes de traitement du signal, en tenant compte de leur performance, de leur fidélité de restitution et de leur coût computationnel.</p>
+                                </ul>
+                                <p>Cette interface met en avant l’aspect interactif et pédagogique du projet, en rendant accessible la manipulation d’un outil audio complexe.</p>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="project-block">
+                    <h2>Bilan personnel</h2>
+                    <p><!-- Ton retour d'expérience sur ce projet --></p>
+                </div>
+            </div>
         </section>
     </main>
 

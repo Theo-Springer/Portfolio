@@ -105,11 +105,11 @@ h2 {
     justify-content: center;
     text-align: center;
     background-color: var(--secondary-color);
-    background-image: url('../Portfolio/images/lion.jpg'); /* Chemin vers votre image */
+    background-image: url('../Portfolio/images/lion.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative; /* Nécessaire pour le positionnement de l'overlay */
+    position: relative;
     overflow: hidden; /* Assure que l'image ne dépasse pas */
 }
 
@@ -191,9 +191,32 @@ h2 {
     transform: translateY(-5px);
 }
 
-.project-image {
+.project-image-pov {
     height: 200px;
-    background-color: #333;
+    background-image: url('../Portfolio/images/Pov.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.project-image-pX {
+    height: 200px;
+    margin-left: 25px;
+    background-image: url('../Portfolio/images/Px.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+
+}
+
+.project-image-velo {
+    height: 200px;
+    background-image: url('../Portfolio/images/velo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex-shrink: 0;
 }
 
