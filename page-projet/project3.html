@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 3 - Portfolio</title>
+    <link rel="stylesheet" href="../page-projet/project-pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo">Théo SPRINGER</div>
+                
+                <ul class="nav-menu desktop-menu">
+                    <li><a href="../index.html#contact">Retour au Portfolio</a></li>
+                </ul>
+
+                <div class="nav-controls">
+                    <label class="theme-toggle">
+                        <input type="checkbox" id="theme-toggle">
+                        <div class="toggle-slider"></div>
+                    </label>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section du Projet -->
+    <section class="project-hero">
+        <div class="container hero-content">
+            <a href="../index.html#contact" class="back-link">← Retour</a>
+            <h1 class="project-title">Titre du Projet 3</h1>
+            <p class="project-date">Réalisé en 2025</p>
+            <p class="project-description">Description complète de votre projet. Expliquez le contexte, les objectifs et les défis que vous avez relevés.</p>
+            <div class="project-hero-buttons">
+                <a href="#" class="btn btn-primary" target="_blank">Voir le projet en direct</a>
+                <a href="https://github.com" class="btn btn-secondary" target="_blank">Code source (GitHub)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vue d'ensemble du Projet -->
+    <section class="project-overview">
+        <div class="container">
+            <h2>À propos du projet</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Objectif</h3>
+                    <p>Décrivez l'objectif principal du projet et ce que vous tentiez d'accomplir.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Technologies</h3>
+                    <p>Node.js, MongoDB, Express, [autres tech]</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Durée</h3>
+                    <p>4 semaines (ou la durée réelle)</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Défis</h3>
+                    <p>Quels ont été les principaux défis techniques que vous avez rencontrés ?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Snippets -->
+    <section class="code-showcase">
+        <div class="container">
+            <h2>Snippets de code intéressants</h2>
+            
+            <!-- Code Snippet 1 -->
+            <div class="code-section fade-in-section">
+                <div class="code-header">
+                    <h3>Route API Backend</h3>
+                    <span class="code-language">JavaScript (Node.js)</span>
+                </div>
+                <div class="code-block">
+                    <pre><code>app.get('/api/users/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        res.json(user);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});</code></pre>
+                </div>
+                <div class="code-explanation">
+                    <h4>Explication</h4>
+                    <p>Route API simple et efficace utilisant async/await pour interagir avec la base de données.</p>
+                </div>
+            </div>
+
+            <!-- Code Snippet 2 -->
+            <div class="code-section fade-in-section">
+                <div class="code-header">
+                    <h3>Modèle MongoDB</h3>
+                    <span class="code-language">JavaScript</span>
+                </div>
+                <div class="code-block">
+                    <pre><code>const userSchema = new Schema({
+    name: { type: String, required: true },
+    email: { type: String, unique: true },
+    createdAt: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('User', userSchema);</code></pre>
+                </div>
+                <div class="code-explanation">
+                    <h4>Explication</h4>
+                    <p>Définition du schéma avec validations pour assurer l'intégrité des données.</p>
+                </div>
+            </div>
+
+            <!-- Code Snippet 3 -->
+            <div class="code-section fade-in-section">
+                <div class="code-header">
+                    <h3>Middleware d'authentification</h3>
+                    <span class="code-language">JavaScript</span>
+                </div>
+                <div class="code-block">
+                    <pre><code>const auth = (req, res, next) => {
+    const token = req.headers.authorization?.split(' ')[1];
+    if (!token) return res.status(401).json({ error: 'No token' });
+    
+    try {
+        const decoded = jwt.verify(token, process.env.SECRET);
+        req.userId = decoded.id;
+        next();
+    } catch (error) {
+        res.status(401).json({ error: 'Invalid token' });
+    }
+};</code></pre>
+                </div>
+                <div class="code-explanation">
+                    <h4>Explication</h4>
+                    <p>Middleware de sécurité pour protéger les routes sensibles avec JWT.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leçons apprises -->
+    <section class="lessons-section">
+        <div class="container">
+            <h2>Ce que j'ai appris</h2>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-number">1</div>
+                    <h3>Leçon 1</h3>
+                    <p>Décrivez une leçon importante ou une compétence que vous avez développée.</p>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">2</div>
+                    <h3>Leçon 2</h3>
+                    <p>Une autre réalisation ou apprentissage important du projet.</p>
+                </div>
+                <div class="lesson-card">
+                    <div class="lesson-number">3</div>
+                    <h3>Leçon 3</h3>
+                    <p>Partagez une réflexion sur ce qui pourrait être amélioré ou changé.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Leo. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
