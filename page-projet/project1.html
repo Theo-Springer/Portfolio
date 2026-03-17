@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet 1 - Portfolio</title>
-    <link rel="stylesheet" href="../page-projet/project-pages.css">
+    <link rel="stylesheet" href="project-pages.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -31,9 +31,9 @@
     <section class="project-hero">
         <div class="container hero-content">
             <a href="../index.html#contact" class="back-link">← Retour</a>
-            <h1 class="project-title">Titre du Projet 1</h1>
+            <h1 class="project-title">Pen Factory - Jeu Incrémental</h1>
             <p class="project-date">Réalisé en 2025</p>
-            <p class="project-description">Description complète de votre projet. Expliquez le contexte, les objectifs et les défis que vous avez relevés.</p>
+            <p class="project-description">Un jeu incrémental minimaliste à l'esthétique rétro « terminal hacker ». Fabriquez des stylos, gérez une économie dynamique avec des prix fluctuants, et découvrez des mécaniques de progression addictives. Inspiré par Universal Paperclips, ce projet explore les idle games et la gestion d'état sans framework. Le but était de ne pas utiliser d'outils IA pour coder mais uniquement pour apprendre le langages et ces spcificitées.</p>
             <div class="project-hero-buttons">
                 <a href="#" class="btn btn-primary" target="_blank">Voir le projet en direct</a>
                 <a href="https://github.com" class="btn btn-secondary" target="_blank">Code source (GitHub)</a>
@@ -48,19 +48,19 @@
             <div class="overview-grid">
                 <div class="overview-card">
                     <h3>Objectif</h3>
-                    <p>Décrivez l'objectif principal du projet et ce que vous tentiez d'accomplir.</p>
+                    <p>Créer un idle game avec économie dynamique. Fabriquer des stylos, gérer l'achat de ressources à prix fluctuants, automatiser la vente et progresser vers des améliorations. Démontrer la gestion d'état complexe et les boucles de progression en JavaScript vanilla.</p>
                 </div>
                 <div class="overview-card">
                     <h3>Technologies</h3>
-                    <p>HTML, CSS, JavaScript, [autres tech]</p>
+                    <p>JavaScript ES6 (Vanilla), HTML5, CSS3, APIs natives (DOM, setInterval)</p>
                 </div>
                 <div class="overview-card">
                     <h3>Durée</h3>
-                    <p>2 semaines (ou la durée réelle)</p>
+                    <p>Projet en cours (architecture modulaire, upgrades en développement)</p>
                 </div>
                 <div class="overview-card">
                     <h3>Défis</h3>
-                    <p>Quels ont été les principaux défis techniques que vous avez rencontrés ?</p>
+                    <p>Synchroniser plusieurs setInterval sans conflits, gérer 10+ mises à jour DOM par frame, implémenter une économie dynamique avec prix fluctuants influençant la demande, créer une progression addictive sans backend.</p>
                 </div>
             </div>
         </div>
@@ -74,56 +74,81 @@
             <!-- Code Snippet 1 -->
             <div class="code-section fade-in-section">
                 <div class="code-header">
-                    <h3>Fonctionnalité clé 1</h3>
+                    <h3>Vente Automatique - Coeur de la Boucle de Jeu</h3>
                     <span class="code-language">JavaScript</span>
                 </div>
                 <div class="code-block">
-                    <pre><code>// Exemple de code intéressant
-function maFonctionIntéressante() {
-    // Expliquez ce que ce code fait
-    return result;
-}</code></pre>
+                    <pre><code>// Vente automatique des stylos toutes les secondes
+function venteStylos(price) {
+    while (stockStylos > 0) {
+        money += price;
+        stockStylos -= 1;
+    }
+    updateDisplay();
+}
+
+// Execution périodique
+setInterval(() => venteStylos(price), 1000);</code></pre>
                 </div>
                 <div class="code-explanation">
                     <h4>Explication</h4>
-                    <p>Décrivez pourquoi ce code est important, comment il fonctionne et quels problèmes il résout.</p>
+                    <p>Ce pattern est le cœur des idle games. venteStylos() vend chaque stylo en stock au prix défini. La boucle while accumule les ressources, puis updateDisplay() refresh l'UI. L'objectif ? Montrer comment une action simple (vendre) répétée crée une boucle addictive.</p>
                 </div>
             </div>
 
             <!-- Code Snippet 2 -->
             <div class="code-section fade-in-section">
                 <div class="code-header">
-                    <h3>Fonctionnalité clé 2</h3>
-                    <span class="code-language">CSS</span>
+                    <h3>Économie Dynamique - Réduction de Prix Aléatoires</h3>
+                    <span class="code-language">JavaScript</span>
                 </div>
                 <div class="code-block">
-                    <pre><code>.classe-importante {
-    display: flex;
-    justify-content: center;
-    /* Explication du CSS */
-}</code></pre>
+                    <pre><code>// Prix fluctuants afin de créer de la tension stratégique
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomizePrices() {
+    prixPlastic = 10.0 + random(0, 15);
+    prixEncre = 10.0 + random(0, 15);
+    updateDisplay();
+    
+    let delai = 5000 + Math.random() * 5000;
+    setTimeout(randomizePrices, delai);
+}
+
+randomizePrices(); // Lance la boucle</code></pre>
                 </div>
                 <div class="code-explanation">
                     <h4>Explication</h4>
-                    <p>Explique comment ce style contribue à l'apparence ou la fonctionnalité du projet.</p>
+                    <p>Ce système génère une tension économique. Les prix changent toutes les 5-10 secondes, forçant le joueur à décider : acheter maintenant ou attendre ? La randomization crée de l'imprévisibilité. C'est une mécanique classique des tycoon/idle games.</p>
                 </div>
             </div>
 
             <!-- Code Snippet 3 -->
             <div class="code-section fade-in-section">
                 <div class="code-header">
-                    <h3>Optimisation 1</h3>
+                    <h3>Déblocage Progressif de Features</h3>
                     <span class="code-language">JavaScript</span>
                 </div>
                 <div class="code-block">
-                    <pre><code>// Optimisation ou solution créative
-const resultat = data
-    .filter(item => item.actif)
-    .map(item => item.valeur);</code></pre>
+                    <pre><code>// Affichage conditionnel de sections basé sur la progression
+function updateSectionsVisibility() {
+    const upgradesSection = document.getElementById('upgrades-section');
+    if (nbStylos >= 100) {
+        upgradesSection.style.display = 'block';
+        terminalOutput = "Bravo vous avez fabriqué 100 stylos !";
+    } else {
+        upgradesSection.style.display = 'none';
+    }
+}
+
+// Appelée à chaque mise à jour
+updateDisplay();</code></pre>
                 </div>
                 <div class="code-explanation">
                     <h4>Explication</h4>
-                    <p>Cette approche est élégante car elle [raison]. Alternative initiale : [comment vous l'aviez fait avant]</p>
+                    <p>La progression cachée crée de la satisfaction et de la découverte. À 100 stylos, l'accès aux améliorations se déverrouille. Ce pattern maintient l'engagement par surprise et objectifs clairs. Elle récompense aussi l'investissement du joueur.</p>
                 </div>
             </div>
         </div>
@@ -136,18 +161,18 @@ const resultat = data
             <div class="lessons-grid">
                 <div class="lesson-card">
                     <div class="lesson-number">1</div>
-                    <h3>Leçon 1</h3>
-                    <p>Décrivez une leçon importante ou une compétence que vous avez développée.</p>
+                    <h3>Gestion de Timers Asynchrones</h3>
+                    <p>Synchroniser setInterval/setTimeout sans conflits était crucial. Avoir plusieurs boucles (vente 1s, affichage 100ms, prix 5-10s) demande une architecture réfléchie. J'ai appris à compartimenter la logique pour éviter les race conditions.</p>
                 </div>
                 <div class="lesson-card">
                     <div class="lesson-number">2</div>
-                    <h3>Leçon 2</h3>
-                    <p>Une autre réalisation ou apprentissage important du projet.</p>
+                    <h3>Modularisation sans Framework</h3>
+                    <p>Refactoriser le code en core/ (logique), front/ (affichage), donnee/ (état) m'a montré comment structurer du JavaScript vanilla. Même sans React/Vue, une bonne séparation des responsabilités rend le code maintenable et extensible.</p>
                 </div>
                 <div class="lesson-card">
                     <div class="lesson-number">3</div>
-                    <h3>Leçon 3</h3>
-                    <p>Partagez une réflexion sur ce qui pourrait être amélioré ou changé.</p>
+                    <h3>UX et Progression Addictive</h3>
+                    <p>L'esthétique rétro « terminal hacker » + feedback temps réel (messages au terminal) crée une immersion. Voir les chiffres augmenter, les prix baisser, les sections se déverrouiller → c'est là que naît l'envie de continuer. Le game design est aussi important que le code.</p>
                 </div>
             </div>
         </div>
@@ -156,7 +181,7 @@ const resultat = data
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2026 Leo. Tous droits réservés.</p>
+            <p>&copy; 2026 Théo SPRINGER. Tous droits réservés.</p>
             <div class="footer-links">
                 <a href="#">GitHub</a>
                 <a href="#">LinkedIn</a>
